@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pa Pa Panelitas</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins', sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:linear-gradient(120deg,#f5e6d3,#f1d2a9);
+}
+
+/* NAV */
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(139,94,60,0.9);
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 20px;
+z-index:1000;
+flex-wrap:wrap;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+height:50px;
+}
+
+nav ul{
+display:flex;
+gap:15px;
+list-style:none;
+}
+
+nav li{
+cursor:pointer;
+font-size:14px;
+}
+
+/* HERO */
+.hero{
+min-height:auto;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:90px 15px 30px;
+}
+
+.hero-img{
+width:100%;
+max-width:400px;
+border-radius:20px;
+margin-bottom:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.hero h1{
+font-size:22px;
+}
+
+.boton-pro{
+background:linear-gradient(45deg,#f39c12,#e67e22);
+color:white;
+padding:12px 20px;
+border:none;
+border-radius:25px;
+cursor:pointer;
+margin-top:15px;
+font-size:16px;
+}
+
+/* SECCIONES */
+section{
+padding:30px 12px;
+margin:5px auto;
+border-radius:20px;
+}
+
+/* HISTORIA */
+.historia{
+background:rgba(255,255,255,0.9);
+text-align:center;
+max-width:900px;
+margin:auto;
+}
+
+.historia h2{
+margin-bottom:15px;
+font-size:22px;
+}
+
+.historia p{
+margin-bottom:5px;
+font-size:14px;
+line-height:1.4;
+}
+
+/* PRODUCTOS */
+.productos{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,300px));
+gap:20px;
+justify-content:center;
+max-width:700px;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:10px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 10px 20px rgba(0,0,0,0.15);
+}
+
+.card img{
+width:80%;
+height:120px;
+object-fit:contain;
+border-radius:10px;
+background:white;
+padding:5px;
+margin:auto;
+display:block;
+}
+
+.card h3{
+font-size:18px;
+}
+
+.card p{
+font-size:16px;
+}
+
+.card button{
+width:100%;
+margin-top:8px;
+padding:12px;
+border:none;
+border-radius:20px;
+font-size:14px;
+}
+
+.btn-agregar{
+background:#27ae60;
+color:white;
+}
+
+.btn-elegir{
+background:#3498db;
+color:white;
+}
+
+/* FORM (CENTRADO 🔥) */
+.formulario{
+background:white;
+padding:15px;
+border-radius:20px;
+max-width:500px;
+margin:20px auto;
+}
+
+.formulario input, select{
+width:100%;
+padding:10px;
+margin:5px 0;
+border-radius:10px;
+border:1px solid #ccc;
+}
+
+.btn{
+background:#f39c12;
+border:none;
+padding:12px;
+border-radius:20px;
+cursor:pointer;
+width:100%;
+margin-top:10px;
+font-size:16px;
+}
+
+.whatsapp{
+background:#25D366;
+color:white;
+}
+
+/* CARRITO */
+#carritoMini{
+position:fixed;
+bottom:10px;
+right:10px;
+width:90%;
+max-width:300px;
+background:white;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+padding:12px;
+z-index:1000;
+font-size:14px;
+}
+
+/* FOOTER */
+footer{
+background:#8b5e3c;
+color:white;
+text-align:center;
+padding:15px;
+font-size:14px;
+}
+
+/* TITULOS */
+h1, h2, h3{
+margin-bottom:10px;
+}
+
+/* TABLET */
+@media (min-width:768px){
+.hero h1{font-size:28px;}
+.productos{grid-template-columns:repeat(2,300px);}
+}
+
+/* PC */
+@media (min-width:1024px){
+.hero h1{font-size:32px;}
+.productos{grid-template-columns:repeat(2,300px);}
+#carritoMini{width:260px; right:20px;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">
+<img src="hero.png">
+<h2>Pa Pa Panelitas</h2>
+</div>
+
+<ul>
+<li onclick="ir('inicio')">Inicio</li>
+<li onclick="ir('historia')">Historia</li>
+<li onclick="ir('productos')">Productos</li>
+<li onclick="ir('cotizar')">Cotizar</li>
+</ul>
+</nav>
+
+<section id="inicio" class="hero">
+<img src="tarro.png" class="hero-img">
+<h1>Dulzura artesanal en cada bocado 🍯</h1>
+<button class="boton-pro" onclick="ir('productos')">Comprar ahora</button>
+</section>
+
+<section id="historia" class="historia">
+<h2>Nuestra Historia 💛</h2>
+<p>Proyecto con impacto social que apoya a personas afectadas por el conflicto armado.</p>
+<p>Cada panelita representa esfuerzo, resiliencia y esperanza.</p>
+<p>💛 Más que un dulce… somos una oportunidad de cambio.</p>
+</section>
+
+<section id="productos">
+<h2>Nuestras Panelitas</h2>
+
+<div class="productos">
+
+<div class="card">
+<img src="tarro.png">
+<h3>Tarro 20 unidades</h3>
+<p>$20.000</p>
+<button class="btn-agregar" onclick="agregarCarrito('Tarro 20',20000)">Agregar</button>
+<button class="btn-elegir" onclick="seleccionar('Tarro 20',20000)">Cotizar</button>
+</div>
+
+<div class="card">
+<img src="Bolsa.png">
+<h3>Bolsa 50 unidades</h3>
+<p>$33.000</p>
+<button class="btn-agregar" onclick="agregarCarrito('Bolsa 50',33000)">Agregar</button>
+<button class="btn-elegir" onclick="seleccionar('Bolsa 50',33000)">Cotizar</button>
+</div>
+
+</div>
+</section>
+
+<section id="cotizar">
+<h2>Cotiza tu pedido</h2>
+
+<div class="formulario">
+<select id="producto">
+<option value="20000">Tarro 20</option>
+<option value="33000">Bolsa 50</option>
+</select>
+
+<input type="number" id="cantidad" placeholder="Cantidad">
+<input type="text" id="ciudad" placeholder="Ciudad">
+
+<button class="btn" onclick="calcular()">Calcular</button>
+<div id="total">Total: $0</div>
+
+<button class="btn whatsapp" onclick="enviarWhatsApp()">WhatsApp</button>
+</div>
+</section>
+
+<div id="carritoMini">
+<h4>🛒 (<span id="contadorCarrito">0</span>)</h4>
+<div id="listaCarrito" style="max-height:120px; overflow-y:auto;"></div>
+<h4 id="totalCarrito">Total: $0</h4>
+<button class="btn whatsapp" onclick="enviarCarritoWhatsApp()">Enviar</button>
+</div>
+
+<footer>
+<p>© 2026 Pa Pa Panelitas</p>
+</footer>
+
+<script>
+function ir(id){
+document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
+function seleccionar(nombre, precio){
+document.getElementById("producto").value = precio;
+document.getElementById("cantidad").value = 1;
+ir("cotizar");
+}
+
+let carrito=[];
+
+function agregarCarrito(nombre, precio){
+carrito.push({nombre, precio});
+actualizarCarrito();
+}
+
+function actualizarCarrito(){
+let lista=document.getElementById("listaCarrito");
+let total=0;
+lista.innerHTML="";
+carrito.forEach(item=>{
+total+=item.precio;
+lista.innerHTML+=`<div>${item.nombre} - $${item.precio}</div>`;
+});
+document.getElementById("totalCarrito").innerText="Total: $"+total;
+document.getElementById("contadorCarrito").innerText=carrito.length;
+}
+
+function calcular(){
+let precio=parseInt(document.getElementById("producto").value);
+let cantidad=parseInt(document.getElementById("cantidad").value);
+if(!cantidad){alert("Ingresa cantidad");return;}
+let total=precio*cantidad;
+document.getElementById("total").innerText="Total: $"+total;
+}
+
+function enviarWhatsApp(){
+let select = document.getElementById("producto");
+let producto = select.options[select.selectedIndex].text;
+let cantidad = document.getElementById("cantidad").value;
+let ciudad = document.getElementById("ciudad").value;
+let total = document.getElementById("total").innerText;
+
+let numero = "573001234567";
+
+let msg = `Hola, quiero cotizar:%0AProducto: ${producto}%0ACantidad: ${cantidad}%0ACiudad: ${ciudad}%0A${total}`;
+
+window.open(`https://wa.me/${numero}?text=${msg}`);
+}
+
+function enviarCarritoWhatsApp(){
+let msg="Pedido:%0A";
+let total=0;
+carrito.forEach((item,i)=>{
+msg+=`${i+1}. ${item.nombre} - $${item.precio}%0A`;
+total+=item.precio;
+});
+msg+=`Total: $${total}`;
+window.open(`https://wa.me/573001234567?text=${msg}`);
+}
+</script>
+
+</body>
+</html>
